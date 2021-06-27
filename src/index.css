@@ -1,13 +1,110 @@
-body {
+* {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+#root {
+  display: grid;
+  background-color: #746c70;
+  min-height: 100vh;
+  place-content: center;
+  font-family: 'Play', sans-serif;
+}
+#drum-machine {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #2b2d35;
+  width: 45rem;
+  height: 22rem;
+  border: 4px solid white;
+  padding: 1rem;
+  border-radius: 0.3rem;
+}
+.pad-bank {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+.drum-pad {
+  display: grid;
+  place-content: center;
+  border-radius: 0.5rem;
+  background-color: #0f0f11;
+  border: 3px solid #26bce9;
+  color: #26bce9;
+  font-size: 2rem;
+  margin: 0.3rem;
+  animation-name: press;
+  animation-duration: 0.5s;
+  cursor: pointer;
+  user-select: none;
+}
+.pad-button:hover {
+  font-weight: 900;
+}
+.wrapper-controls {
+  display: grid;
+  grid-template-rows: 12% 20% 26% 12% 27%;
+  justify-items: center;
+  color: white;
+}
+#logo {
+  justify-self: flex-end;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 1.2rem;
+  user-select: none;
+}
+.button-select {
+  background-color: black;
+  padding: 0.3rem 0.3rem;
+  width: 4.5rem;
+  height: 2.5rem;
+  border-radius: 0.2rem;
+  border: 1px solid white;
+}
+.float {
+  width: 40%;
+  height: 100%;
+  background-color: #26bce9;
+  border-radius: 0.2rem;
+}
+.selected {
+  background-color: #26bcf9;
+  color: black;
+}
+#display {
+  display: grid;
+  place-content: center;
+  width: 60%;
+  height: 80%;
+  background-color: #28b2e9;
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 0.2rem;
+  border: 1px solid white;
+  user-select: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+input[type='range'] {
+  -webkit-appearance: none;
+  width: 15rem;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  /*linea*/
+  height: 0.2rem;
+}
+input[type='range']:hover::-webkit-slider-runnable-track {
+  background: #28b2e9;
+}
+input[type='range']::-webkit-slider-thumb {
+  /*bolita*/
+  border: 1px solid white;
+  height: 25px;
+  width: 15px;
+  border-radius: 0.2rem;
+  background: #0f0f11;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -10px;
 }
